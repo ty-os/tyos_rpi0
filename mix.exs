@@ -1,4 +1,4 @@
-defmodule NervesSystemRpi0.MixProject do
+defmodule TyosRpi0.MixProject do
   use Mix.Project
 
   @app :tyos_rpi0
@@ -34,9 +34,9 @@ defmodule NervesSystemRpi0.MixProject do
   defp nerves_package do
     [
       type: :system,
-      # artifact_sites: [
-      #   {:github_releases, "nerves-project/#{@app}"}
-      # ],
+      artifact_sites: [
+        {:prefix, "file:///home/robotmay/Development/elixir/tyos/sys/tyos_rpi0/"}
+      ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
       platform_config: [
@@ -67,7 +67,7 @@ defmodule NervesSystemRpi0.MixProject do
       maintainers: ["Robert May"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/ty-os/#{@app}"}
+      links: %{"Github" => "https://gitlab.com/robotmay/#{@app}"}
     ]
   end
 
